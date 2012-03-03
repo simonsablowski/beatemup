@@ -9,6 +9,11 @@ function initializeExternalLinks() {
 	});
 }
 
+function hideScreenshot() {
+	$('#screenshot').hide();
+}
+
 $(function() {
 	initializeExternalLinks();
+	hideScreenshot();
 });
