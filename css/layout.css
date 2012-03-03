@@ -27,12 +27,12 @@ body > #document {
 	padding-bottom: 30px;
 }
 
-#body a, #body em {
-	white-space: nowrap;
+#body p {
+	padding: 30px 0;
 }
 
-#body #content {
-	padding: 0 20px;
+#body a, #body em {
+	white-space: nowrap;
 }
 
 #footer {

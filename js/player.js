@@ -3,7 +3,7 @@ function Player(element, game) {
 	this.game = game;
 	this.opponent = null;
 	this.energy = 100;
-	this.stepLength = 20;
+	this.stepLength = 40;
 	
 	this.getPosition = function() {
 		return this.element.position().left;

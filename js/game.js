@@ -83,7 +83,7 @@ $(function() {
 	
 	var gameElement = $('<div/>', {
 		id: 'game'
-	}).appendTo($('#body'));
+	}).appendTo($('#content'));
 	
 	var playerElement = $('<div/>', {
 		id: 'player',

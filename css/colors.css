@@ -7,11 +7,11 @@ html {
 	text-shadow: 0 1px 0 #fff;
 }
 
-#body a, #body em, #body strong {
+#body {
 	color: #ccc;
 }
 
-#body a:hover {
+#body a, #body em, #body strong {
 	color: #fff;
 }
 
@@ -24,9 +24,5 @@ html {
 }
 
 #copyright a {
-	color: #666;
-}
-
-#copyright a:hover {
-	color: #999;
+	color: #000;
 }
