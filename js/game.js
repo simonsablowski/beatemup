@@ -45,7 +45,10 @@ function Game(element) {
 $(function() {
 	var offset = 20;
 	
-	var gameElement = $('#game');
+	var gameElement = $('<div/>', {
+		id: 'game'
+	}).appendTo($('#body'));
+	
 	var playerElement = $('<div/>', {
 		id: 'player',
 		css: {

@@ -5,33 +5,6 @@
 	width: 600px;
 }
 
-#player, #enemy {
-	background-color: transparent;
-	background-repeat: no-repeat;
-	height: 105px;
-	position: absolute;
-	top: 120px;
-	width: 82px;
-}
-
-#player {
-	background-image: url('../img/scorpion.gif');
-	background-position: 0 50%;
-}
-
-#player.punching {
-	background-position: -82px 50%;
-}
-
-#enemy {
-	background-image: url('../img/sub-zero.gif');
-	background-position: -82px 50%;
-}
-
-#enemy.punching {
-	background-position: 0 50%;
-}
-
 #playerEnergyBar, #enemyEnergyBar {
 	background-color: #999;
 	border: 2px solid #999;
@@ -41,13 +14,6 @@
 	width: 200px;
 }
 
-#playerEnergy, #enemyEnergy {
-	background-color: #ccc;
-	height: 16px;
-	position: absolute;
-	top: 0;
-}
-
 #playerEnergyBar span, #enemyEnergyBar span {
 	display: block;
 	line-height: 1.25;
@@ -55,4 +21,11 @@
 	text-align: center;
 	text-transform: uppercase;
 	width: 100%;
+}
+
+#playerEnergy, #enemyEnergy {
+	background-color: #ccc;
+	height: 16px;
+	position: absolute;
+	top: 0;
 }
