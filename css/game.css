@@ -14,24 +14,24 @@
 #playerEnergyBar, #enemyEnergyBar {
 	background-color: #940c0e;
 	border: 2px solid #e4e772;
-	height: 16px;
+	height: 20px;
 	position: absolute;
-	top: 40px;
-	width: 200px;
+	top: 60px;
+	width: 320px;
 }
 
 #playerEnergyBar {
-	left: 24px;
+	left: 40px;
 }
 
 #enemyEnergyBar {
-	left: 576px;
+	left: 440px;
 }
 
 #playerEnergyBar span, #enemyEnergyBar span {
 	color: #e4e772;
 	display: block;
-	font-size: 14px;
+	font-size: 18px;
 	font-weight: bold;
 	position: absolute;
 	text-align: center;
@@ -42,7 +42,7 @@
 
 #playerEnergy, #enemyEnergy {
 	background-color: #03a400;
-	height: 16px;
+	height: 20px;
 	position: absolute;
 	top: 0;
 }

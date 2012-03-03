@@ -79,7 +79,7 @@ function Game(element) {
 }
 
 $(function() {
-	var offset = 20;
+	var offset = 100;
 	
 	var gameElement = $('<div/>', {
 		id: 'game'

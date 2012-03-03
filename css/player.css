@@ -3,12 +3,12 @@
 	background-image: url('../img/scorpion.gif');
 	background-position: 0 50%;
 	background-repeat: no-repeat;
-	height: 210px;
+	height: 270px;
 	position: absolute;
-	top: 240px;
-	width: 164px;
+	top: 210px;
+	width: 210px;
 }
 
 #player.punching {
-	background-position: -164px 50%;
+	background-position: -210px 50%;
 }
