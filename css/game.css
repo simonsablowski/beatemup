@@ -12,8 +12,10 @@
 }
 
 #playerEnergyBar, #enemyEnergyBar {
-	background-color: #940c0e;
-	border: 2px solid #e4e772;
+	background-color: #c60000;
+	background-image: url('../img/energy-bar.gif');
+	background-repeat: x-repeat;
+	border: 2px solid #ffff52;
 	height: 20px;
 	position: absolute;
 	top: 60px;
@@ -29,19 +31,30 @@
 }
 
 #playerEnergyBar span, #enemyEnergyBar span {
-	color: #e4e772;
+	background-repeat: no-repeat;
 	display: block;
 	font-size: 18px;
 	font-weight: bold;
 	position: absolute;
 	text-align: center;
+	text-indent: -999999px;
 	text-shadow: 0 1px 0 #000;
 	text-transform: uppercase;
 	width: 100%;
 }
 
+#playerEnergyBar span {
+	background-image: url('../img/scorpion_name.gif');
+	background-position: 20px 50%;
+}
+
+#enemyEnergyBar span {
+	background-image: url('../img/sub-zero_name.gif');
+	background-position: 175px 50%;
+}
+
 #playerEnergy, #enemyEnergy {
-	background-color: #03a400;
+	background-color: #00a500;
 	height: 20px;
 	position: absolute;
 	top: 0;
@@ -55,12 +68,23 @@
 }
 
 #playerWins span, #playerLoses span {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
 	display: block;
 	font-size: 30px;
 	font-weight: bold;
 	position: absolute;
 	text-align: center;
+	text-indent: -999999px;
 	text-shadow: 0 2px 0 #000;
 	text-transform: uppercase;
 	width: 100%;
+}
+
+#playerWins span {
+	background-image: url('../img/scorpion_wins.gif');
+}
+
+#playerLoses span {
+	background-image: url('../img/sub-zero_wins.gif');
 }
