@@ -1,8 +1,8 @@
 function Game(element) {
-	var self = this;
 	this.element = element;
-	this.player;
-	this.enemy;
+	this.player = null;
+	this.enemy = null;
+	this.winner = null;
 	this.keyCodes = {
 		space: 32,
 		left: 37,
@@ -16,7 +16,11 @@ function Game(element) {
 		this.enemy = enemy;
 		this.player.opponent = enemy;
 		this.enemy.opponent = player;
-		
+		this.bindKeyCodes();
+	};
+	
+	this.bindKeyCodes = function() {
+		var self = this;
 		$(document).keydown(function(e) {
 			switch (e.keyCode) {
 				case self.keyCodes.left:
@@ -32,6 +36,34 @@ function Game(element) {
 		});
 	};
 	
+	this.end = function() {
+		this.unbindKeyCodes();
+		this.enemy.stopFighting();
+		this.element.addClass('ended');
+		this.determineWinner();
+		this.showResultScreen();
+	};
+	
+	this.unbindKeyCodes = function() {
+		$(document).unbind('keydown');
+	};
+	
+	this.determineWinner = function() {
+		if (this.enemy.getEnergy() == 0) {
+			this.winner = this.player;
+		} else if (this.player.getEnergy() == 0) {
+			this.winner = this.enemy;
+		}
+	};
+	
+	this.showResultScreen = function() {
+		if (this.winner == this.player) {
+			$('#playerWins').show();
+		} else if (this.winner == this.enemy) {
+			$('#playerLoses').show();
+		}
+	};
+	
 	this.getWidth = function() {
 		return this.element.width();
 	};
@@ -39,6 +71,10 @@ function Game(element) {
 	this.updateEnergy = function() {
 		$('#playerEnergy').css('width', this.player.getEnergy() + '%');
 		$('#enemyEnergy').css('width', this.enemy.getEnergy() + '%');
+		
+		if (this.player.getEnergy() == 0 || this.enemy.getEnergy() == 0) {
+			this.end();
+		}
 	};
 }
 
@@ -55,6 +91,7 @@ $(function() {
 			left: offset + 'px'
 		}
 	}).appendTo(gameElement);
+	
 	var enemyElement = $('<div/>', {
 		id: 'enemy',
 		css: {
@@ -63,10 +100,7 @@ $(function() {
 	}).appendTo(gameElement);
 	
 	var playerEnergyBarElement = $('<div/>', {
-		id: 'playerEnergyBar',
-		css: {
-			left: offset + 'px'
-		}
+		id: 'playerEnergyBar'
 	}).append($('<div/>', {
 		id: 'playerEnergy',
 		css: {
@@ -75,10 +109,7 @@ $(function() {
 	})).append('<span>Player</span>').appendTo(gameElement);
 	
 	var enemyEnergyBarElement = $('<div/>', {
-		id: 'enemyEnergyBar',
-		css: {
-			left: gameElement.width() - playerEnergyBarElement.width() - offset + 'px'
-		}
+		id: 'enemyEnergyBar'
 	}).append($('<div/>', {
 		id: 'enemyEnergy',
 		css: {
@@ -86,10 +117,18 @@ $(function() {
 		}
 	})).append('<span>Enemy</span>').appendTo(gameElement);
 	
+	var playerWinsElement = $('<div/>', {
+		id: 'playerWins'
+	}).append('<span>You win!</span>').hide().appendTo(gameElement);
+	
+	var playerLosesElement = $('<div/>', {
+		id: 'playerLoses'
+	}).append('<span>You lose!</span>').hide().appendTo(gameElement);
+	
 	var game = new Game(gameElement);
 	var player = new Player(playerElement, game);
 	var enemy = new Enemy(enemyElement, game);
 	
 	game.start(player, enemy);
-	enemy.fight();
+	enemy.startFighting();
 });

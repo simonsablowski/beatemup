@@ -5,6 +5,10 @@
 	width: 600px;
 }
 
+#game.ended {
+	background-color: #fff;
+}
+
 #playerEnergyBar, #enemyEnergyBar {
 	background-color: #999;
 	border: 2px solid #999;
@@ -12,6 +16,14 @@
 	position: absolute;
 	top: 10px;
 	width: 200px;
+}
+
+#playerEnergyBar {
+	left: 20px;
+}
+
+#enemyEnergyBar {
+	left: 380px;
 }
 
 #playerEnergyBar span, #enemyEnergyBar span {
@@ -28,4 +40,23 @@
 	height: 16px;
 	position: absolute;
 	top: 0;
+}
+
+#playerWins, #playerLoses {
+	background-color: #ccc;
+	height: 16px;
+	left: 150px;
+	padding: 16px 0;
+	position: absolute;
+	top: 100px;
+	width: 300px;
+}
+
+#playerWins span, #playerLoses span {
+	display: block;
+	line-height: 1.25;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }

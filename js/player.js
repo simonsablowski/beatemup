@@ -1,8 +1,7 @@
 function Player(element, game) {
-	var self = this;
 	this.element = element;
 	this.game = game;
-	this.opponent;
+	this.opponent = null;
 	this.energy = 100;
 	this.stepLength = 20;
 	
