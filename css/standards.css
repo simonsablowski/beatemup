@@ -1,0 +1,87 @@
+body, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: arial, helvetica, clean, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+a {
+	outline-style: none;
+}
+
+em {
+	font-style: italic;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: inherit;
+}
+
+tr, th, td {
+	vertical-align: top;
+}
+
+th, caption {
+	text-align: left;
+}
+
+fieldset, img {
+	border: 0 none;
+}
+
+input, textarea, select {
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+li {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted;
+	font-variant: normal;
+}
+
+q:before, q:after {
+	content: '"';
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+pre, code, kbd, samp, tt {
+	font-family: monospace;
+	line-height: 100%;
+}
+
+code {
+	display: block;
+}

@@ -1,0 +1,32 @@
+html {
+	background-color: #333;
+}
+
+#header h1 {
+	color: #ccc;
+	text-shadow: 0 1px 0 #fff;
+}
+
+#body a, #body em, #body strong {
+	color: #ccc;
+}
+
+#body a:hover {
+	color: #fff;
+}
+
+#footer {
+	background-color: #fff;
+}
+
+#copyright {
+	color: #999;
+}
+
+#copyright a {
+	color: #666;
+}
+
+#copyright a:hover {
+	color: #999;
+}
