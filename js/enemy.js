@@ -16,8 +16,8 @@ function Enemy(element, game) {
 				self.moveRight();
 			}
 			
-			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * 0.4)) {
-				self.punch();
+			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * 0.5)) {
+				self.attack();
 			}
 		}, 400);
 	};

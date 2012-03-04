@@ -1,14 +1,22 @@
 #enemy {
 	background-color: transparent;
 	background-image: url('../img/sub-zero.gif');
-	background-position: -210px 50%;
+	background-position: 0 50%;
 	background-repeat: no-repeat;
-	height: 270px;
+	height: 320px;
 	position: absolute;
-	top: 210px;
-	width: 210px;
+	top: 160px;
+	width: 250px;
 }
 
 #enemy.punching {
-	background-position: 0 50%;
+	background-position: -750px 50%;
+}
+
+#enemy.kicking {
+	background-position: -1000px 50%;
+}
+
+#enemy.hit {
+	background-position: -1250px 50%;
 }

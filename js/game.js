@@ -30,7 +30,7 @@ function Game(element) {
 					self.player.moveRight();
 					break;
 				case self.keyCodes.space:
-					self.player.punch();
+					self.player.attack();
 					break;
 			}
 		});
