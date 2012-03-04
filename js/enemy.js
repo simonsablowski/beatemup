@@ -9,7 +9,7 @@ function Enemy(element, game) {
 	
 	this.startFighting = function() {
 		var self = this;
-		this.interval = window.setInterval(function() {
+		this.interval = setInterval(function() {
 			if (Math.floor(Math.random() * 6) > 0) {
 				self.moveLeft();
 			} else {
@@ -23,6 +23,6 @@ function Enemy(element, game) {
 	};
 	
 	this.stopFighting = function() {
-		window.clearInterval(this.interval);
+		clearInterval(this.interval);
 	};
 }

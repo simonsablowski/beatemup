@@ -14,6 +14,10 @@ function Player(element, game) {
 	};
 	
 	this.moveLeft = function() {
+		this.element.addClass('moving-left').delay(100).queue(function(next) {
+			$(this).removeClass('moving-left');
+			next();
+		});
 		if (this.getPosition() < this.opponent.getPosition()) {
 			this.element.css('left', Math.max(0, this.getPosition() - this.stepLength) + 'px');
 		} else {
@@ -22,6 +26,10 @@ function Player(element, game) {
 	};
 	
 	this.moveRight = function() {
+		this.element.addClass('moving-right').delay(100).queue(function(next) {
+			$(this).removeClass('moving-right');
+			next();
+		});
 		if (this.getPosition() < this.opponent.getPosition()) {
 			this.element.css('left', Math.min(this.opponent.getPosition() - this.getWidth() * 0.5, this.getPosition() + this.stepLength) + 'px');
 		} else {

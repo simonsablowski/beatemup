@@ -21,7 +21,7 @@ function Game(element) {
 	
 	this.bindKeyCodes = function() {
 		var self = this;
-		$(document).keydown(function(e) {
+		$(document).keyup(function(e) {
 			switch (e.keyCode) {
 				case self.keyCodes.left:
 					self.player.moveLeft();

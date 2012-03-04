@@ -9,7 +9,7 @@ a {
 #document {
 	margin: 0 auto;
 	position: relative;
-	width: 1000px;
+	width: 800px;
 }
 
 body > #document {
@@ -20,6 +20,10 @@ body > #document {
 #header h1 {
 	padding: 30px 0;
 	text-transform: uppercase;
+}
+
+#header h2 {
+	padding: 0 0 30px;
 }
 
 #body {

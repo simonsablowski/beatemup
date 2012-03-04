@@ -9,6 +9,14 @@
 	width: 250px;
 }
 
+#player.moving-left {
+	background-position: -250px 50%;
+}
+
+#player.moving-right {
+	background-position: -500px 50%;
+}
+
 #player.punching {
 	background-position: -750px 50%;
 }

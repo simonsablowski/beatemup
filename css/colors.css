@@ -7,11 +7,11 @@ html {
 	text-shadow: 0 1px 0 #fff;
 }
 
-#body {
+#header, #body {
 	color: #ccc;
 }
 
-#body a, #body em, #body strong {
+#header a, #header em, #header strong, #body a, #body em, #body strong {
 	color: #fff;
 }
 
