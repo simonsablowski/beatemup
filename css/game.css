@@ -1,6 +1,6 @@
 #game {
 	background-color: transparent;
-	background-image: url('../img/courtyard.gif');
+	background-image: url('../img/arena.gif');
 	height: 508px;
 	line-height: 1;
 	position: relative;
@@ -31,6 +31,7 @@
 }
 
 #playerEnergyBar span, #enemyEnergyBar span {
+	background-image: url('../img/name.gif');
 	background-repeat: no-repeat;
 	display: block;
 	font-size: 18px;
@@ -44,13 +45,11 @@
 }
 
 #playerEnergyBar span {
-	background-image: url('../img/scorpion_name.gif');
-	background-position: 20px 50%;
+	background-position: 20px 0;
 }
 
 #enemyEnergyBar span {
-	background-image: url('../img/sub-zero_name.gif');
-	background-position: 175px 50%;
+	background-position: 175px -19px;
 }
 
 #playerEnergy, #enemyEnergy {
@@ -68,17 +67,19 @@
 
 #playerWins, #playerLoses {
 	color: #fff;
+	height: 36px;
 	position: absolute;
 	top: 112px;
 	width: 100%;
 }
 
 #playerWins span, #playerLoses span {
-	background-position: 50% 50%;
+	background-image: url('../img/result.gif');
 	background-repeat: no-repeat;
 	display: block;
-	font-size: 30px;
+	font-size: 36px;
 	font-weight: bold;
+	height: 36px;
 	position: absolute;
 	text-align: center;
 	text-indent: -999999px;
@@ -88,9 +89,9 @@
 }
 
 #playerWins span {
-	background-image: url('../img/scorpion_wins.gif');
+	background-position: 50% 0;
 }
 
 #playerLoses span {
-	background-image: url('../img/sub-zero_wins.gif');
+	background-position: 50% -36px;
 }
