@@ -3,6 +3,7 @@ function Game(element) {
 	this.player = null;
 	this.enemy = null;
 	this.winner = null;
+	this.loser = null;
 	this.keyCodes = {
 		space: 32,
 		left: 37,
@@ -51,8 +52,10 @@ function Game(element) {
 	this.determineWinner = function() {
 		if (this.enemy.getEnergy() == 0) {
 			this.winner = this.player;
+			this.loser = this.enemy;
 		} else if (this.player.getEnergy() == 0) {
 			this.winner = this.enemy;
+			this.loser = this.player;
 		}
 	};
 	
@@ -62,6 +65,8 @@ function Game(element) {
 		} else if (this.winner == this.enemy) {
 			$('#playerLoses').show();
 		}
+		this.winner.win();
+		this.loser.lose();
 	};
 	
 	this.getWidth = function() {

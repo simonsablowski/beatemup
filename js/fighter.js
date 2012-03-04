@@ -1,4 +1,4 @@
-function Player(element, game) {
+function Fighter(element, game) {
 	this.element = element;
 	this.game = game;
 	this.opponent = null;
@@ -67,5 +67,49 @@ function Player(element, game) {
 		
 		this.energy = Math.max(0, this.energy - 5);
 		this.game.updateEnergy();
+	};
+	
+	this.win = function() {
+		this.element.addClass('winning');
+	};
+	
+	this.lose = function() {
+		this.element.addClass('losing');
+	};
+}
+
+Player.prototype = new Fighter;
+Player.prototype.constructor = Player;
+
+function Player(element, game) {
+	this.element = element;
+	this.game = game;
+}
+
+Enemy.prototype = new Fighter;
+Enemy.prototype.constructor = Enemy;
+
+function Enemy(element, game) {
+	this.element = element;
+	this.game = game;
+	this.interval = null;
+	
+	this.startFighting = function() {
+		var self = this;
+		this.interval = setInterval(function() {
+			if (Math.floor(Math.random() * 6) > 0) {
+				self.moveLeft();
+			} else {
+				self.moveRight();
+			}
+			
+			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * 0.5)) {
+				self.attack();
+			}
+		}, 400);
+	};
+	
+	this.stopFighting = function() {
+		clearInterval(this.interval);
 	};
 }

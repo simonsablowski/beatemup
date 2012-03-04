@@ -1,0 +1,45 @@
+#player, #enemy {
+	background-color: transparent;
+	background-position: 0 50%;
+	background-repeat: no-repeat;
+	height: 320px;
+	position: absolute;
+	top: 160px;
+	width: 250px;
+}
+
+#player.moving-left, #enemy.moving-left {
+	background-position: -250px 50%;
+}
+
+#player.moving-right, #enemy.moving-right {
+	background-position: -500px 50%;
+}
+
+#player.punching, #enemy.punching {
+	background-position: -750px 50%;
+}
+
+#player.kicking, #enemy.kicking {
+	background-position: -1000px 50%;
+}
+
+#player.hit, #enemy.hit {
+	background-position: -1250px 50%;
+}
+
+#player.winning, #enemy.winning {
+	background-position: -1500px 50%;
+}
+
+#player.defeated, #enemy.losing {
+	background-position: -1750px 50%;
+}
+
+#player {
+	background-image: url('../img/scorpion.gif');
+}
+
+#enemy {
+	background-image: url('../img/sub-zero.gif');
+}

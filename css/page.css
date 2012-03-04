@@ -1,4 +1,72 @@
-@import 'standards.css';
-@import 'layout.css';
-@import 'colors.css';
-@import 'graphics.css';
+html {
+	background-color: #333;
+}
+
+html, body, #document {
+	height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#document {
+	margin: 0 auto;
+	position: relative;
+	width: 800px;
+}
+
+body > #document {
+	height: auto;
+	min-height: 100%;
+}
+
+#header, #body {
+	color: #ccc;
+}
+
+#header h1 {
+	color: #ccc;
+	padding: 30px 0;
+	text-shadow: 0 1px 0 #fff;
+	text-transform: uppercase;
+}
+
+#header h2 {
+	padding: 0 0 30px;
+}
+
+#header a, #header em, #header strong, #body a, #body em, #body strong {
+	color: #fff;
+}
+
+#body {
+	line-height: 2.0;
+	padding-bottom: 30px;
+}
+
+#body p {
+	padding: 30px 0;
+}
+
+#body a, #body em {
+	white-space: nowrap;
+}
+
+#footer {
+	background-color: #fff;
+	height: 30px;
+	margin-top: -30px;
+	position: relative;
+	width: 100%;
+}
+
+#copyright {
+	color: #999;
+	font-size: 75%;
+	padding: 6px 12px;
+}
+
+#copyright a {
+	color: #000;
+}
