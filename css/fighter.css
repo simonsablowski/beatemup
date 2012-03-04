@@ -32,7 +32,7 @@
 	background-position: -1500px 50%;
 }
 
-#player.defeated, #enemy.losing {
+#player.losing, #enemy.losing {
 	background-position: -1750px 50%;
 }
 
