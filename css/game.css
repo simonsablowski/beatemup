@@ -56,8 +56,14 @@
 #playerEnergy, #enemyEnergy {
 	background-color: #00a500;
 	height: 20px;
-	position: absolute;
-	top: 0;
+}
+
+#playerEnergy {
+	float: left;
+}
+
+#enemyEnergy {
+	float: right;
 }
 
 #playerWins, #playerLoses {
