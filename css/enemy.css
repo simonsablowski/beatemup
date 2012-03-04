@@ -9,11 +9,11 @@
 	width: 250px;
 }
 
-#enemy.moving-left {
+#enemy.moving-right {
 	background-position: -250px 50%;
 }
 
-#enemy.moving-right {
+#enemy.moving-left {
 	background-position: -500px 50%;
 }
 
