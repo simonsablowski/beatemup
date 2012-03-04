@@ -1,59 +1,42 @@
 #game {
-	background-color: transparent;
-	background-image: url('../img/arena.gif');
-	height: 508px;
+	background-color: #999;
+	height: 400px;
 	line-height: 1;
 	position: relative;
 	width: 800px;
 }
 
-#game.ended {
-	background-color: #fff;
-}
-
 #playerEnergyBar, #enemyEnergyBar {
-	background-color: #c60000;
-	background-image: url('../img/energy-bar.gif');
-	background-repeat: x-repeat;
-	border: 2px solid #ffff52;
+	background-color: #ccc;
+	border: 2px solid #fff;
 	height: 20px;
 	position: absolute;
-	top: 60px;
-	width: 320px;
+	top: 20px;
+	width: 300px;
 }
 
 #playerEnergyBar {
-	left: 40px;
+	left: 20px;
 }
 
 #enemyEnergyBar {
-	left: 436px;
+	left: 476px;
 }
 
 #playerEnergyBar span, #enemyEnergyBar span {
-	background-image: url('../img/name.gif');
-	background-repeat: no-repeat;
+	color: #fff;
 	display: block;
 	font-size: 18px;
 	font-weight: bold;
 	position: absolute;
 	text-align: center;
-	text-indent: -999999px;
 	text-shadow: 0 1px 0 #000;
 	text-transform: uppercase;
 	width: 100%;
 }
 
-#playerEnergyBar span {
-	background-position: 20px 0;
-}
-
-#enemyEnergyBar span {
-	background-position: 175px -19px;
-}
-
 #playerEnergy, #enemyEnergy {
-	background-color: #00a500;
+	background-color: #666;
 	height: 20px;
 }
 
@@ -69,20 +52,17 @@
 	color: #fff;
 	height: 36px;
 	position: absolute;
-	top: 112px;
+	top: 75px;
 	width: 100%;
 }
 
 #playerWins span, #playerLoses span {
-	background-image: url('../img/result.gif');
-	background-repeat: no-repeat;
 	display: block;
 	font-size: 36px;
 	font-weight: bold;
 	height: 36px;
 	position: absolute;
 	text-align: center;
-	text-indent: -999999px;
 	text-shadow: 0 2px 0 #000;
 	text-transform: uppercase;
 	width: 100%;
