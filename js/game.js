@@ -45,7 +45,7 @@ function Game(element) {
 	};
 	
 	this.unbindKeyCodes = function() {
-		$(document).unbind('keydown');
+		$(document).unbind('keyup');
 	};
 	
 	this.determineWinner = function() {
