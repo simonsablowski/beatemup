@@ -106,7 +106,7 @@ function Enemy(element, game) {
 				self.moveRight();
 			}
 			
-			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * this.vulnerability)) {
+			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * self.vulnerability)) {
 				self.attack();
 			}
 		}, 200);
