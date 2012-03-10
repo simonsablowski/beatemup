@@ -4,6 +4,9 @@ function Fighter(element, game) {
 	this.opponent = null;
 	this.energy = 100;
 	this.stepLength = 40;
+	this.vulnerability = 0.5;
+	this.damage = 5;
+	this.delay = 100;
 	
 	this.getPosition = function() {
 		return this.element.position().left;
@@ -14,24 +17,24 @@ function Fighter(element, game) {
 	};
 	
 	this.moveLeft = function() {
-		this.element.addClass('moving-left').delay(100).queue(function(next) {
+		this.element.addClass('moving-left').delay(this.delay).queue(function(next) {
 			$(this).removeClass('moving-left');
 			next();
 		});
 		if (this.getPosition() < this.opponent.getPosition()) {
 			this.element.css('left', Math.max(0, this.getPosition() - this.stepLength) + 'px');
 		} else {
-			this.element.css('left', Math.max(this.opponent.getPosition() + this.getWidth() * 0.5, this.getPosition() - this.stepLength) + 'px');
+			this.element.css('left', Math.max(this.opponent.getPosition() + this.getWidth() * this.vulnerability, this.getPosition() - this.stepLength) + 'px');
 		}
 	};
 	
 	this.moveRight = function() {
-		this.element.addClass('moving-right').delay(100).queue(function(next) {
+		this.element.addClass('moving-right').delay(this.delay).queue(function(next) {
 			$(this).removeClass('moving-right');
 			next();
 		});
 		if (this.getPosition() < this.opponent.getPosition()) {
-			this.element.css('left', Math.min(this.opponent.getPosition() - this.getWidth() * 0.5, this.getPosition() + this.stepLength) + 'px');
+			this.element.css('left', Math.min(this.opponent.getPosition() - this.getWidth() * this.vulnerability, this.getPosition() + this.stepLength) + 'px');
 		} else {
 			this.element.css('left', Math.min(this.getPosition() + this.stepLength, this.game.getWidth() - this.getWidth()) + 'px');
 		}
@@ -44,7 +47,7 @@ function Fighter(element, game) {
 			var attack = 'kicking';
 		}
 		
-		this.element.addClass(attack).delay(200).queue(function(next) {
+		this.element.addClass(attack).delay(this.delay).queue(function(next) {
 			$(this).removeClass(attack);
 			next();
 		});
@@ -60,12 +63,12 @@ function Fighter(element, game) {
 	};
 	
 	this.getHit = function() {
-		this.element.addClass('hit').delay(200).queue(function(next) {
+		this.element.addClass('hit').delay(this.delay).queue(function(next) {
 			$(this).removeClass('hit');
 			next();
 		});
 		
-		this.energy = Math.max(0, this.energy - 5);
+		this.energy = Math.max(0, this.energy - this.damage);
 		this.game.updateEnergy();
 	};
 	
@@ -103,10 +106,10 @@ function Enemy(element, game) {
 				self.moveRight();
 			}
 			
-			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * 0.5)) {
+			if (self.opponent.getPosition() >= (self.getPosition() - self.opponent.getWidth() * this.vulnerability)) {
 				self.attack();
 			}
-		}, 400);
+		}, 200);
 	};
 	
 	this.stopFighting = function() {
