@@ -1,0 +1,92 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background-color: rgb(25, 25, 25);
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	font-family: arial, helvetica, clean, sans-serif;
+	font-size: 14px;
+	line-height: 1;
+	margin: 0 0 34px;
+}
+
+a {
+	outline-style: none;
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+img {
+	border: 0 none;
+}
+
+li {
+	list-style: none;
+}
+
+#header {
+	background-color: rgb(50, 50, 50);
+	height: 82px;
+}
+
+#title, #help, #body, #copyright {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#title {
+	color: rgb(255, 255, 255);
+	font-size: 200%;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+#help {
+	color: rgb(200, 200, 200);
+	padding: 5px 0 15px;
+}
+
+#body {
+	padding: 20px 0;
+}
+
+#disclaimer {
+	color: rgb(200, 200, 200);
+	line-height: 2.0;
+	padding: 20px 0 0;
+}
+
+#disclaimer a {
+	color: rgb(150, 150, 150);
+}
+
+#screenshot {
+	display: none;
+}
+
+#footer {
+	background-color: rgb(50, 50, 50);
+	bottom: 0;
+	height: 34px;
+	position: absolute;
+	width: 100%;
+}
+
+#copyright {
+	color: rgb(200, 200, 200);
+	padding: 10px 0;
+}
+
+#copyright a {
+	color: rgb(150, 150, 150);
+}

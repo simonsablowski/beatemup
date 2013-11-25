@@ -1,58 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-		<meta http-equiv="Content-Language" content="en"/>
 		<title>Beat 'em up!</title>
-		<meta name="dc.title" content="Beat 'em up!"/>
-		<meta name="description" content="A simple JavaScript-based Mortal Kombat tribute by Simon Sablowski"/>
-		<meta name="keywords" content="simon sablowski, berlin, web development, mortal kombat, javascript, tribute"/>
-		<meta name="revisit-after" content="1 day"/>
-		<link href="http://projects.simsab.net/beatemup/" rel="canonical"/>
-		<link href="css/standards.css" rel="stylesheet" type="text/css"/>
-		<link href="css/page.css" rel="stylesheet" type="text/css"/>
-		<link href="css/fighter.css" rel="stylesheet" type="text/css"/>
-		<link href="css/game.css" rel="stylesheet" type="text/css"/>
-		<link href="css/mortal-kombat.css" rel="stylesheet" type="text/css"/>
-		<link type="image/x-icon" href="http://www.simsab.net/img/favicon.ico" rel="shortcut icon"/>
-		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="js/page.js"></script>
-		<script type="text/javascript" src="js/fighter.js"></script>
-		<script type="text/javascript" src="js/game.js"></script>
+		<meta charset="utf-8">
+		<meta name="description" content="A simple Mortal Kombat tribute based on HTML5 and JavaScript by Simon Sablowski">
+		<meta name="keywords" content="simon sablowski, berlin, web development, mortal kombat, javascript, html5, tribute">
+		<link href="http://projects.simsab.net/beatemup/" rel="canonical">
+		<link href="css/beatemup.css" rel="stylesheet" type="text/css">
+		<script src="js/beatemup.js" type="text/javascript"></script>
 	</head>
 	<body>
-		<div id="document">
-			<div id="header">
-				<h1>
-					Beat 'em up!
-				</h1>
-				<h2>
-					Use the arrow keys and space bar on your keyboard to move and fight.
-				</h2>
-			</div>
-			<div id="body">
-				<div id="content"><!-- Game will be loaded into this element --></div>
-				<p id="disclaimer">
-					This one-day project by
-					<a href="http://www.simsab.net" title="Simon Sablowski">Simon Sablowski</a>
-					is a JavaScript-based tribute to
-					<a href="http://en.wikipedia.org/wiki/Mortal_Kombat" title="Mortal Kombat">Mortal Kombat</a>,<br/>
-					a classic beat 'em up game developed by
-					<a href="http://www.netherrealm.com" title="NetherRealm Studios">NetherRealm Studios</a>,
-					formerly Midway Games Chicago.<br/>
-					All graphics, characters and related elements are taken from the original game, trademarks and<br/>
-					property of <em>Warner Bros. Entertainment Inc. WB SHIELD &trade; & Warner Bros. Entertainment Inc.(s10)</em>.
-				</p>
-				<p id="screenshot">
-					<img src="img/screenshot.jpg" alt="Screenshot"/>
-				</p>
-			</div>
-		</div>
-		<div id="footer">
-			<p id="copyright">
-				&copy; 2012 <a href="http://www.simsab.net" title="Simon Sablowski">Simon Sablowski</a>
+		<header id="header">
+			<h1 id="title">
+				Beat 'em up!
+			</h1>
+			<h2 id="help">
+				Use the arrow keys and space bar on your keyboard to move and fight.
+			</h2>
+		</header>
+		<div id="body">
+			<canvas id="game" width="800" height="508"></canvas>
+			<p id="disclaimer">
+				This project by
+				<a href="http://www.simsab.net" title="Simon Sablowski">Simon Sablowski</a>
+				is a HTML5 and JavaScript-based tribute to
+				<a href="http://en.wikipedia.org/wiki/Mortal_Kombat" title="Mortal Kombat">Mortal Kombat</a>,<br/>
+				a classic beat 'em up game developed by
+				<a href="http://www.netherrealm.com" title="NetherRealm Studios">NetherRealm Studios</a>,
+				formerly Midway Games Chicago.<br/>
+				All graphics, characters and related elements are taken from the original game, trademarks and<br/>
+				property of <em>Warner Bros. Entertainment Inc. WB SHIELD &trade; & Warner Bros. Entertainment Inc.(s10)</em>.
+			</p>
+			<p id="screenshot">
+				<img src="img/screenshot.jpg" alt="Screenshot"/>
 			</p>
 		</div>
+		<footer id="footer">
+			<p id="copyright">
+				&copy; 2013 <a href="http://www.simsab.net" title="simsab">simsab</a>
+			</p>
+		</footer>
 		<script type="text/javascript">
 		<!--
 		var gaJsHost = 'https:' == document.location.protocol ? 'https://ssl.' : 'http://www.';
