@@ -41,23 +41,23 @@ li {
 
 #title, #help, #body, #copyright {
 	margin: 0 auto;
-	width: 900px;
+	width: 800px;
 }
 
 #title {
 	color: rgb(255, 255, 255);
 	font-size: 200%;
 	font-weight: bold;
-	padding: 10px 0;
+	padding: 10px 80px;
 }
 
 #help {
 	color: rgb(200, 200, 200);
-	padding: 5px 0 15px;
+	padding: 5px 80px 15px;
 }
 
 #body {
-	padding: 20px 0;
+	padding: 20px 80px;
 }
 
 #disclaimer {
@@ -84,7 +84,7 @@ li {
 
 #copyright {
 	color: rgb(200, 200, 200);
-	padding: 10px 0;
+	padding: 10px 80px;
 }
 
 #copyright a {
