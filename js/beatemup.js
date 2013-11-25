@@ -1,21 +1,41 @@
 var canvas, game, player, enemy;
 
+var ARENA_WIDTH = 800;
+var ARENA_HEIGHT = 508;
+var ARENA_X = 0;
+var ARENA_Y = 0;
+var FIGHTER_WIDTH = 250;
+var FIGHTER_HEIGHT = 320;
+var FIGHTER_X = 0;
+var FIGHTER_Y = 160;
+var ENERGY_BAR_WIDTH = 324;
+var ENERGY_BAR_HEIGHT = 324;
+var ENERGY_BAR_X = 40;
+var ENERGY_BAR_Y = 60;
+var ENERGY_WIDTH = 320;
+var ENERGY_HEIGHT = 20;
+var ENERGY_X = 42;
+var ENERGY_Y = 62;
+var FIGHTER_NAME_WIDTH = 125;
+var FIGHTER_NAME_HEIGHT = 19;
+var FIGHTER_NAME_X = 66;
+var FIGHTER_NAME_Y = 62;
+var FIGHTER_WINS_WIDTH = 300;
+var FIGHTER_WINS_HEIGHT = 36;
+var FIGHTER_WINS_X = 250;
+var FIGHTER_WINS_Y = 112;
+var KEY_SPACE = 32;
+var KEY_LEFT = 37;
+var KEY_RIGHT = 39;
+
 function Game() {
 	this.images = null;
 	this.winner = null;
 	this.loser = null;
-	this.keyCodes = {
-		space: 32,
-		left: 37,
-		up: 38,
-		right: 39,
-		down: 40
-	};
 	
 	this.construct = function() {
 		this.initializeCanvas();
 		this.loadImages();
-		return this;
 	};
 	
 	this.initializeCanvas = function() {
@@ -44,42 +64,35 @@ function Game() {
 		return image;
 	};
 	
+	this.bindKeys = function(event) {
+		switch (event.which) {
+			case KEY_SPACE:
+				player.attack();
+				break;
+			case KEY_LEFT:
+				player.moveLeft();
+				break;
+			case KEY_RIGHT:
+				player.moveRight();
+				break;
+		}
+	};
+	
 	this.start = function() {
 		player.opponent = enemy;
 		enemy.opponent = player;
-		this.bindKeys();
+		document.addEventListener('keyup', this.bindKeys);
 		enemy.startFighting();
 		this.draw();
 	};
 	
-	this.bindKeys = function() {
-		var self = this;
-		document.addEventListener('keyup', function(event) {
-			switch (event.which) {
-				case self.keyCodes.left:
-					player.moveLeft();
-					break;
-				case self.keyCodes.right:
-					player.moveRight();
-					break;
-				case self.keyCodes.space:
-					player.attack();
-					break;
-			}
-		});
-	};
-	
 	this.end = function() {
-		this.unbindKeys();
+		document.removeEventListener('keyup', this.bindKeys);
 		enemy.stopFighting();
 		this.determineWinner();
 		this.winner.win();
 		this.loser.lose();
 		this.draw();
-	};
-	
-	this.unbindKeys = function() {
-		document.removeEventListener('keyup');
 	};
 	
 	this.determineWinner = function() {
@@ -99,25 +112,25 @@ function Game() {
 	};
 	
 	this.draw = function() {
-		canvas.drawImage(this.images.arena, 0, 0);
+		canvas.drawImage(this.images.arena, ARENA_X, ARENA_Y);
 		
-		canvas.drawImage(this.images.player, player.clip, 0, 250, 320, player.position.x, player.position.y + 160, 250, 320);
-		canvas.drawImage(this.images.enemy, enemy.clip, 0, 250, 320, enemy.position.x, enemy.position.y + 160, 250, 320);
-		canvas.drawImage(this.images.playerEnergyBar, 40, 60);
-		canvas.drawImage(this.images.enemyEnergyBar, 436, 60);
-		canvas.drawImage(this.images.playerEnergy, 42, 62, player.energy / 100 * 320, 20);
-		canvas.drawImage(this.images.enemyEnergy, 438 + (100 - enemy.energy) / 100 * 320, 62, enemy.energy / 100 * 320, 20);
-		canvas.drawImage(this.images.playerName, 66, 62, 125, 19);
-		canvas.drawImage(this.images.enemyName, 613, 62, 125, 19);
+		canvas.drawImage(this.images.player, player.clip, 0, FIGHTER_WIDTH, FIGHTER_HEIGHT, player.position.x, player.position.y + FIGHTER_Y, FIGHTER_WIDTH, FIGHTER_HEIGHT);
+		canvas.drawImage(this.images.enemy, enemy.clip, 0, FIGHTER_WIDTH, FIGHTER_HEIGHT, enemy.position.x, enemy.position.y + FIGHTER_Y, FIGHTER_WIDTH, FIGHTER_HEIGHT);
+		canvas.drawImage(this.images.playerEnergyBar, ENERGY_BAR_X, ENERGY_BAR_Y);
+		canvas.drawImage(this.images.enemyEnergyBar, ARENA_WIDTH - ENERGY_BAR_WIDTH - ENERGY_BAR_X, ENERGY_BAR_Y);
+		canvas.drawImage(this.images.playerEnergy, ENERGY_X, ENERGY_Y, player.energy / 100 * ENERGY_WIDTH, ENERGY_HEIGHT);
+		canvas.drawImage(this.images.enemyEnergy, ARENA_WIDTH - ENERGY_WIDTH - ENERGY_X + (100 - enemy.energy) / 100 * ENERGY_WIDTH, ENERGY_Y, enemy.energy / 100 * ENERGY_WIDTH, ENERGY_HEIGHT);
+		canvas.drawImage(this.images.playerName, FIGHTER_NAME_X, FIGHTER_NAME_Y, FIGHTER_NAME_WIDTH, FIGHTER_NAME_HEIGHT);
+		canvas.drawImage(this.images.enemyName, ARENA_WIDTH - FIGHTER_NAME_WIDTH - FIGHTER_NAME_X, FIGHTER_NAME_Y, FIGHTER_NAME_WIDTH, FIGHTER_NAME_HEIGHT);
 		
 		if (this.winner == player) {
-			canvas.drawImage(this.images.playerWins, 250, 112);
+			canvas.drawImage(this.images.playerWins, FIGHTER_WINS_X, FIGHTER_WINS_Y);
 		} else if (this.winner == enemy) {
-			canvas.drawImage(this.images.enemyWins, 250, 112);
+			canvas.drawImage(this.images.enemyWins, FIGHTER_WINS_X, FIGHTER_WINS_Y);
 		}
 	};
 	
-	return this.construct();
+	this.construct();
 }
 
 function Fighter() {
@@ -137,26 +150,26 @@ function Fighter() {
 				this.clip = 0;
 				break;
 			case 'moving-left':
-				this.clip = 250;
+				this.clip = 1 * FIGHTER_WIDTH;
 				break;
 			case 'moving-right':
-				this.clip = 500;
+				this.clip = 2 * FIGHTER_WIDTH;
 				break;
 			case 'punching':
-				this.clip = 750;
+				this.clip = 3 * FIGHTER_WIDTH;
 				break;
 			case 'kicking':
-				this.clip = 1000;
+				this.clip = 4 * FIGHTER_WIDTH;
 				break;
 			case 'hit':
-				this.clip = 1250;
+				this.clip = 5 * FIGHTER_WIDTH;
 				break;
 			case 'winning':
-				this.clip = 1500;
+				this.clip = 6 * FIGHTER_WIDTH;
 				clearTimeout(this.reset);
 				break;
 			case 'losing':
-				this.clip = 1750;
+				this.clip = 7 * FIGHTER_WIDTH;
 				clearTimeout(this.reset);
 				break;
 		}
@@ -186,7 +199,7 @@ function Fighter() {
 		if (this.position.x < this.opponent.position.x) {
 			this.changePosition(Math.max(0, this.position.x - this.stepLength), 0);
 		} else {
-			this.changePosition(Math.max(this.opponent.position.x + 250 * this.vulnerability, this.position.x - this.stepLength), 0);
+			this.changePosition(Math.max(this.opponent.position.x + FIGHTER_WIDTH * this.vulnerability, this.position.x - this.stepLength), 0);
 		}
 	};
 	
@@ -194,9 +207,9 @@ function Fighter() {
 		this.changeAction('moving-right');
 		
 		if (this.position.x < this.opponent.position.x) {
-			this.changePosition(Math.min(this.opponent.position.x - 250 * this.vulnerability, this.position.x + this.stepLength), 0);
+			this.changePosition(Math.min(this.opponent.position.x - FIGHTER_WIDTH * this.vulnerability, this.position.x + this.stepLength), 0);
 		} else {
-			this.changePosition(Math.min(this.position.x + this.stepLength, 550), 0);
+			this.changePosition(Math.min(this.position.x + this.stepLength, ARENA_WIDTH - FIGHTER_WIDTH), 0);
 		}
 	};
 	
@@ -209,8 +222,8 @@ function Fighter() {
 		
 		this.changeAction(attack);
 		
-		if ((this.position.x < this.opponent.position.x && (this.opponent.position.x - this.position.x) < 250) ||
-			(this.opponent.position.x < this.position.x && (this.position.x - this.opponent.position.x) < 250)) {
+		if ((this.position.x < this.opponent.position.x && (this.opponent.position.x - this.position.x) < FIGHTER_WIDTH) ||
+			(this.opponent.position.x < this.position.x && (this.position.x - this.opponent.position.x) < FIGHTER_WIDTH)) {
 			this.opponent.getHit();
 		}
 	};
@@ -238,11 +251,10 @@ Player.prototype.constructor = Player;
 function Player() {
 	this.construct = function() {
 		this.changeAction(null, false, false);
-		this.changePosition(100, 0);
-		return this;
+		this.changePosition(FIGHTER_X, 0);
 	};
 	
-	return this.construct();
+	this.construct();
 }
 
 Enemy.prototype = new Fighter;
@@ -253,8 +265,7 @@ function Enemy() {
 	
 	this.construct = function() {
 		this.changeAction(null, false, false);
-		this.changePosition(450, 0);
-		return this;
+		this.changePosition(ARENA_WIDTH - FIGHTER_WIDTH - FIGHTER_X, 0);
 	};
 	
 	this.startFighting = function() {
@@ -266,7 +277,7 @@ function Enemy() {
 				self.moveRight();
 			}
 			
-			if (self.opponent.position.x >= (self.position.x - 250 * self.vulnerability)) {
+			if (self.opponent.position.x >= (self.position.x - FIGHTER_WIDTH * self.vulnerability)) {
 				self.attack();
 			}
 		}, 200);
@@ -276,7 +287,7 @@ function Enemy() {
 		clearInterval(this.fighting);
 	};
 	
-	return this.construct();
+	this.construct();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
