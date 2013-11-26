@@ -65,17 +65,17 @@ function Game() {
 	
 	this.loadImages = function() {
 		this.images = {
-			arena: this.loadImage('img/arena.gif'),
-			player: this.loadImage('img/player.gif'),
-			playerEnergyBar: this.loadImage('img/energy-bar.gif'),
-			playerEnergy: this.loadImage('img/energy.gif'),
-			playerName: this.loadImage('img/player-name.gif'),
-			playerWins: this.loadImage('img/player-wins.gif'),
-			enemy: this.loadImage('img/enemy.gif'),
-			enemyEnergyBar: this.loadImage('img/energy-bar.gif'),
-			enemyEnergy: this.loadImage('img/energy.gif'),
-			enemyName: this.loadImage('img/enemy-name.gif'),
-			enemyWins: this.loadImage('img/enemy-wins.gif')
+			arena: this.loadImage('assets/arena.gif'),
+			player: this.loadImage('assets/player.gif'),
+			playerEnergyBar: this.loadImage('assets/energy-bar.gif'),
+			playerEnergy: this.loadImage('assets/energy.gif'),
+			playerName: this.loadImage('assets/player-name.gif'),
+			playerWins: this.loadImage('assets/player-wins.gif'),
+			enemy: this.loadImage('assets/enemy.gif'),
+			enemyEnergyBar: this.loadImage('assets/energy-bar.gif'),
+			enemyEnergy: this.loadImage('assets/energy.gif'),
+			enemyName: this.loadImage('assets/enemy-name.gif'),
+			enemyWins: this.loadImage('assets/enemy-wins.gif')
 		};
 	};
 	
@@ -86,18 +86,8 @@ function Game() {
 	};
 	
 	this.loadSounds = function() {
-		this.images = {
-			arena: this.loadSound('img/arena.gif'),
-			player: this.loadSound('img/player.gif'),
-			playerEnergyBar: this.loadSound('img/energy-bar.gif'),
-			playerEnergy: this.loadSound('img/energy.gif'),
-			playerName: this.loadSound('img/player-name.gif'),
-			playerWins: this.loadSound('img/player-wins.gif'),
-			enemy: this.loadSound('img/enemy.gif'),
-			enemyEnergyBar: this.loadSound('img/energy-bar.gif'),
-			enemyEnergy: this.loadSound('img/energy.gif'),
-			enemyName: this.loadSound('img/enemy-name.gif'),
-			enemyWins: this.loadSound('img/enemy-wins.gif')
+		this.sounds = {
+			
 		};
 	};
 	
