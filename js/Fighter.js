@@ -101,6 +101,8 @@ function Fighter(position, image) {
 		if ((self.position.x < self.opponent.position.x && (self.opponent.position.x - self.position.x) < config.fighter.bodyWidth) ||
 			(self.opponent.position.x < self.position.x && (self.position.x - self.opponent.position.x) < config.fighter.bodyWidth)) {
 			self.opponent.getHit();
+			
+			sounds.get('getPunched').play();
 		}
 	};
 	
@@ -111,11 +113,15 @@ function Fighter(position, image) {
 		if ((self.position.x < self.opponent.position.x && (self.opponent.position.x - self.position.x) < config.fighter.bodyWidth) ||
 			(self.opponent.position.x < self.position.x && (self.position.x - self.opponent.position.x) < config.fighter.bodyWidth)) {
 			self.opponent.getHit();
+			
+			sounds.get('getKicked').play();
 		}
 	};
 	
 	self.getHit = function() {
 		self.setState(self.states.getHit, true);
+		
+		sounds.get('moan' + Math.round(Math.random() + 1)).play();
 		
 		self.energy = Math.max(0, self.energy - config.fighter.damage);
 	};

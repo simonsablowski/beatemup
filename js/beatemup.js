@@ -239,6 +239,10 @@ config.sounds = [];
 config.sounds['fight'] = {fileName: 'assets/fight.mp3'};
 config.sounds['userWins'] = {fileName: 'assets/scorpion-wins.mp3'};
 config.sounds['computerWins'] = {fileName: 'assets/sub-zero-wins.mp3'};
+config.sounds['moan1'] = {fileName: 'assets/moan1.mp3'};
+config.sounds['moan2'] = {fileName: 'assets/moan2.mp3'};
+config.sounds['getPunched'] = {fileName: 'assets/getPunched.mp3'};
+config.sounds['getKicked'] = {fileName: 'assets/getKicked.mp3'};
 
 var game, images, sounds, renderer, user, computer;
 
