@@ -13,7 +13,7 @@ body {
 	font-family: arial, helvetica, clean, sans-serif;
 	font-size: 14px;
 	line-height: 1;
-	margin: 0 0 34px;
+	margin: 0 0 166px;
 }
 
 a {
@@ -39,7 +39,7 @@ li {
 	height: 82px;
 }
 
-#title, #help, #body, #copyright {
+#title, #help, #body, #disclaimer, #copyright {
 	margin: 0 auto;
 	width: 800px;
 }
@@ -48,22 +48,30 @@ li {
 	color: rgb(255, 255, 255);
 	font-size: 200%;
 	font-weight: bold;
-	padding: 10px 80px;
+	padding: 15px 80px 0;
 }
 
 #help {
 	color: rgb(200, 200, 200);
-	padding: 5px 80px 15px;
+	padding: 10px 80px 15px;
 }
 
 #body {
 	padding: 20px 80px;
 }
 
+#footer {
+	background-color: rgb(50, 50, 50);
+	bottom: 0;
+	height: 166px;
+	position: absolute;
+	width: 100%;
+}
+
 #disclaimer {
 	color: rgb(200, 200, 200);
 	line-height: 2.0;
-	padding: 20px 0 0;
+	padding: 5px 80px 0;
 }
 
 #disclaimer a {
@@ -74,17 +82,9 @@ li {
 	display: none;
 }
 
-#footer {
-	background-color: rgb(50, 50, 50);
-	bottom: 0;
-	height: 34px;
-	position: absolute;
-	width: 100%;
-}
-
 #copyright {
 	color: rgb(200, 200, 200);
-	padding: 10px 80px;
+	padding: 10px 80px 15px;
 }
 
 #copyright a {
