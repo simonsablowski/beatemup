@@ -51,7 +51,7 @@ function KeyboardController(fighter) {
 		}
 	};
 	
-	self.deconstruct = function() {
+	self.destruct = function() {
 		self.states.walkLeft = false;
 		self.states.walkRight = false;
 		self.states.jump = false;

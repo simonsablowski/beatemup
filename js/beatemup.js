@@ -1,7 +1,7 @@
 var config = {};
 
 config.frameRate = 10;
-config.difficulty = 1;
+config.difficulty = 3;
 config.startDelay = 1500;
 config.endDelay = 500;
 config.keys = {
@@ -253,7 +253,7 @@ config.sounds['moan2'] = {fileName: 'assets/moan2.mp3'};
 config.sounds['getPunched'] = {fileName: 'assets/getPunched.mp3'};
 config.sounds['getKicked'] = {fileName: 'assets/getKicked.mp3'};
 
-var game, images, sounds, renderer, user, computer;
+var game, images, sounds;
 
 document.addEventListener('DOMContentLoaded', function() {
 	game = new Game();
