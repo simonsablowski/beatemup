@@ -29,7 +29,7 @@ function Game() {
 		}
 		
 		sounds.get('fight').play();
-		renderer.addImages(['arena', 'user', 'computer', 'userEnergyBar', 'computerEnergyBar', 'userEnergy', 'computerEnergy', 'userName', 'computerName', 'fight']);
+		renderer.addImages(['arena', 'computer', 'user', 'computerEnergyBar', 'userEnergyBar', 'computerEnergy', 'userEnergy', 'computerName', 'userName', 'fight']);
 		
 		self.startUpdating();
 		
