@@ -138,9 +138,7 @@ config.images['computer'].frames.walkLeft = [
 	{x: 6 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 5 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 4 * config.fighter.width, y: 1 * config.fighter.height},
-	{x: 3 * config.fighter.width, y: 1 * config.fighter.height},
-	{x: 2 * config.fighter.width, y: 1 * config.fighter.height},
-	{x: 1 * config.fighter.width, y: 1 * config.fighter.height}
+	{x: 3 * config.fighter.width, y: 1 * config.fighter.height}
 ];
 config.images['computer'].frames.walkRight = [
 	{x: 11 * config.fighter.width, y: 2 * config.fighter.height},
@@ -151,9 +149,7 @@ config.images['computer'].frames.walkRight = [
 	{x: 6 * config.fighter.width, y: 2 * config.fighter.height},
 	{x: 5 * config.fighter.width, y: 2 * config.fighter.height},
 	{x: 4 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 3 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 2 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 1 * config.fighter.width, y: 2 * config.fighter.height}
+	{x: 3 * config.fighter.width, y: 2 * config.fighter.height}
 ];
 config.images['computer'].frames.punch = [
 	{x: 10 * config.fighter.width, y: 3 * config.fighter.height},
