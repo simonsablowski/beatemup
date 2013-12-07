@@ -3,7 +3,7 @@ var config = {};
 config.frameRate = 10;
 config.difficulty = 1;
 config.startDelay = 1500;
-config.endDelay = 1500;
+config.endDelay = 500;
 config.keys = {
 	punch: 32,
 	kick: 13,
