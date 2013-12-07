@@ -43,7 +43,7 @@ function Game() {
 	
 	self.constructControllers = function() {
 		self.keyboardController = new KeyboardController(self.user);
-		self.buttonController = new ButtonController(self.user);
+		//self.buttonController = new ButtonController(self.user);
 		self.timeController = new TimeController(self.computer);
 	};
 	
@@ -92,7 +92,7 @@ function Game() {
 	
 	self.destructControllers = function() {
 		self.keyboardController.destruct();
-		self.buttonController.destruct();
+		//self.buttonController.destruct();
 		self.timeController.destruct();
 	};
 	
