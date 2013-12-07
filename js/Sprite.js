@@ -19,8 +19,10 @@ function Sprite(image, defaultFrames) {
 	
 	//TODO: needs improvement
 	self.reset = function() {
-		if (self.loopFrames || self.resetFrames) {
+		if (self.loopFrames) {
 			self.frame = 0;
+		} else {
+			self.frame = self.frames.length - 1;
 		}
 		if (self.resetFrames) {
 			self.frames = self.defaultFrames;
