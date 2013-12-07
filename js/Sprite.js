@@ -19,17 +19,20 @@ function Sprite(image, defaultFrames) {
 	
 	//TODO: needs improvement
 	self.reset = function() {
-		if (self.loopFrames) {
+		if (self.loopFrames || self.resetFrames) {
 			self.frame = 0;
-		} else {
-			self.frame--;
 		}
 		if (self.resetFrames) {
 			self.frames = self.defaultFrames;
 		}
 	};
 	
+	//TODO: needs improvement
 	self.animate = function() {
+		//FIXME: quickfix
+		if (self.frames[self.frame] === undefined) {
+			self.frame = 0;
+		}
 		self.image.sx = self.frames[self.frame].x;
 		self.image.sy = self.frames[self.frame].y;
 		
