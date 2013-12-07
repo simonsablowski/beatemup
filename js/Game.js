@@ -56,6 +56,7 @@ function Game() {
 	self.updateEnergy = function() {
 		images.get('userEnergy').width = user.energy / 100 * config.energy.width;
 		images.get('computerEnergy').width = computer.energy / 100 * config.energy.width;
+		images.get('computerEnergy').x = config.arena.width - config.energy.width - config.energy.x + (100 - computer.energy) / 100 * config.energy.width;
 		
 		if (user.energy == 0 || computer.energy == 0) {
 			self.end();
