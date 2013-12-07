@@ -116,26 +116,23 @@ config.images['computer'] = {
 };
 config.images['computer'].frames = {};
 config.images['computer'].frames.idle = [
+	{x: 11 * config.fighter.width, y: 0 * config.fighter.height},
+	{x: 10 * config.fighter.width, y: 0 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 8 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 7 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 6 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 5 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 4 * config.fighter.width, y: 0 * config.fighter.height},
 	{x: 3 * config.fighter.width, y: 0 * config.fighter.height},
-	{x: 2 * config.fighter.width, y: 0 * config.fighter.height}
+	{x: 2 * config.fighter.width, y: 0 * config.fighter.height},
+	{x: 1 * config.fighter.width, y: 0 * config.fighter.height},
+	{x: 0 * config.fighter.width, y: 0 * config.fighter.height}
 ];
 config.images['computer'].frames.walkLeft = [
-	{x: 8 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 7 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 6 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 5 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 4 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 3 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 2 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 1 * config.fighter.width, y: 2 * config.fighter.height},
-	{x: 0 * config.fighter.width, y: 2 * config.fighter.height}
-];
-config.images['computer'].frames.walkRight = [
+	{x: 11 * config.fighter.width, y: 1 * config.fighter.height},
+	{x: 10 * config.fighter.width, y: 1 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 8 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 7 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 6 * config.fighter.width, y: 1 * config.fighter.height},
@@ -143,33 +140,49 @@ config.images['computer'].frames.walkRight = [
 	{x: 4 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 3 * config.fighter.width, y: 1 * config.fighter.height},
 	{x: 2 * config.fighter.width, y: 1 * config.fighter.height},
-	{x: 1 * config.fighter.width, y: 1 * config.fighter.height},
-	{x: 0 * config.fighter.width, y: 1 * config.fighter.height}
+	{x: 1 * config.fighter.width, y: 1 * config.fighter.height}
+];
+config.images['computer'].frames.walkRight = [
+	{x: 11 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 10 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 8 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 7 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 6 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 5 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 4 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 3 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 2 * config.fighter.width, y: 2 * config.fighter.height},
+	{x: 1 * config.fighter.width, y: 2 * config.fighter.height}
 ];
 config.images['computer'].frames.punch = [
-	{x: 7 * config.fighter.width, y: 3 * config.fighter.height},
-	{x: 6 * config.fighter.width, y: 3 * config.fighter.height}
+	{x: 10 * config.fighter.width, y: 3 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 3 * config.fighter.height}
 ];
 config.images['computer'].frames.kick = [
+	{x: 10 * config.fighter.width, y: 4 * config.fighter.height},
+	{x: 8 * config.fighter.width, y: 4 * config.fighter.height},
+	{x: 7 * config.fighter.width, y: 4 * config.fighter.height},
+	{x: 6 * config.fighter.width, y: 4 * config.fighter.height},
 	{x: 5 * config.fighter.width, y: 4 * config.fighter.height},
 	{x: 4 * config.fighter.width, y: 4 * config.fighter.height}
 ];
 config.images['computer'].frames.getHit = [
-	{x: 8 * config.fighter.width, y: 0 * config.fighter.height},
-	{x: 7 * config.fighter.width, y: 5 * config.fighter.height},
-	{x: 6 * config.fighter.width, y: 5 * config.fighter.height},
-	{x: 5 * config.fighter.width, y: 5 * config.fighter.height}
+	{x: 11 * config.fighter.width, y: 0 * config.fighter.height},
+	{x: 10 * config.fighter.width, y: 5 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 5 * config.fighter.height},
+	{x: 8 * config.fighter.width, y: 5 * config.fighter.height}
 ];
 config.images['computer'].frames.win = [
-	{x: 8 * config.fighter.width, y: 6 * config.fighter.height},
-	{x: 7 * config.fighter.width, y: 6 * config.fighter.height},
-	{x: 6 * config.fighter.width, y: 6 * config.fighter.height},
-	{x: 5 * config.fighter.width, y: 6 * config.fighter.height}
+	{x: 11 * config.fighter.width, y: 6 * config.fighter.height},
+	{x: 10 * config.fighter.width, y: 6 * config.fighter.height},
+	{x: 9 * config.fighter.width, y: 6 * config.fighter.height},
+	{x: 8 * config.fighter.width, y: 6 * config.fighter.height}
 ];
 config.images['computer'].frames.lose = [
-	{x: 8 * config.fighter.width, y: 7 * config.fighter.height},
-	{x: 4 * config.fighter.width, y: 7 * config.fighter.height},
-	{x: 3 * config.fighter.width, y: 7 * config.fighter.height}
+	{x: 11 * config.fighter.width, y: 7 * config.fighter.height},
+	{x: 7 * config.fighter.width, y: 7 * config.fighter.height},
+	{x: 6 * config.fighter.width, y: 7 * config.fighter.height}
 ];
 config.images['userEnergyBar'] = {
 	fileName: 'assets/energy-bar.gif',
