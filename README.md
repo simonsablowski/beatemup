@@ -5,6 +5,6 @@ This project by [Simon Sablowski](http://www.simsab.net) is an HTML5 and JavaScr
 a classic beat 'em up game developed by [NetherRealm Studios](http://www.netherrealm.com), formerly Midway Games Chicago.
 All graphics, characters and related elements are taken from the original game, trademarks and property of Warner Bros. Entertainment Inc. WB SHIELD ™ &amp; Warner Bros. Entertainment Inc.(s10).
 
-![Beat 'em up!](https://github.com/simonsablowski/beatemup/blob/master/screenshot.jpg)
+![Beat 'em up!](http://projects.simsab.net/beatemup/screenshot.jpg)
 
 Demo: [projects.simsab.net/beatemup](http://projects.simsab.net/beatemup)
