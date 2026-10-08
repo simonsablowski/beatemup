@@ -60,6 +60,10 @@ li {
 	padding: 20px 80px;
 }
 
+#arena {
+	display: block;
+}
+
 #footer {
 	background-color: rgb(50, 50, 50);
 	bottom: 0;
@@ -76,10 +80,6 @@ li {
 
 #disclaimer a {
 	color: rgb(150, 150, 150);
-}
-
-#screenshot {
-	display: none;
 }
 
 #copyright {
