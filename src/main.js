@@ -23,7 +23,7 @@ try {
 		player,
 		computer
 	});
-	new GameLoop(config.tickRate, () => game.update(), () => game.render()).start();
+	new GameLoop(config.tickRate, () => game.update(), (now) => game.render(now)).start();
 } catch (error) {
 	renderer.clear();
 	renderer.drawText('The game could not be loaded.');
