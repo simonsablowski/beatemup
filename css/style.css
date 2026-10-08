@@ -72,6 +72,8 @@ a:focus-visible {
 .footer {
 	margin: 32px auto 0;
 	max-width: 880px;
+	/* Line up with the screen: the cabinet's border plus its padding. */
+	padding: 0 24px;
 }
 
 .footer p + p {
@@ -89,5 +91,9 @@ a:focus-visible {
 
 	.screen {
 		padding: 8px;
+	}
+
+	.footer {
+		padding: 0 16px;
 	}
 }
