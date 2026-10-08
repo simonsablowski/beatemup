@@ -2,38 +2,37 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Beat 'em up!</title>
 		<meta name="description" content="A simple Mortal Kombat tribute based on HTML5 and JavaScript by Simon Sablowski">
 		<meta property="og:image" content="https://simonsablowski.github.io/beatemup/docs/screenshot.jpg">
 		<link href="https://simonsablowski.github.io/beatemup/" rel="canonical">
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<script src="src/main.js" type="module"></script>
 	</head>
 	<body>
-		<header id="header">
-			<h1 id="title">
-				Beat 'em up!
-			</h1>
-			<h2 id="help">
-				Press any key to start a fight. Use the arrow keys to move, the space bar to punch and enter to kick.
-			</h2>
-		</header>
-		<main id="body">
-			<canvas id="arena" width="800" height="508"></canvas>
-		</main>
-		<footer id="footer">
-			<p id="disclaimer">
+		<div class="cabinet">
+			<h1 class="title">Beat 'em up!</h1>
+			<main class="screen">
+				<canvas id="arena" width="800" height="508"></canvas>
+			</main>
+			<p class="controls">Press any key to start a fight</p>
+			<p class="controls">&larr; &rarr; Move &middot; Space Punch &middot; Enter Kick</p>
+		</div>
+		<footer class="footer">
+			<p>
 				This project by
 				<a href="http://www.simsab.net" title="Simon Sablowski">Simon Sablowski</a>
 				is an HTML5 and JavaScript-based tribute to
-				<a href="http://en.wikipedia.org/wiki/Mortal_Kombat" title="Mortal Kombat">Mortal Kombat</a>,<br>
+				<a href="http://en.wikipedia.org/wiki/Mortal_Kombat" title="Mortal Kombat">Mortal Kombat</a>,
 				a classic beat 'em up game developed by
 				<a href="http://www.netherrealm.com" title="NetherRealm Studios">NetherRealm Studios</a>,
-				formerly Midway Games Chicago.<br>
-				All graphics, characters and related elements are taken from the original game, trademarks and<br>
+				formerly Midway Games Chicago.
+				All graphics, characters and related elements are taken from the original game, trademarks and
 				property of <em>Warner Bros. Entertainment Inc. WB SHIELD &trade; &amp; Warner Bros. Entertainment Inc.(s10)</em>.
 			</p>
-			<p id="copyright">
+			<p>
 				&copy; 2013 <a href="http://www.simsab.net" title="Simon Sablowski">Simon Sablowski</a>
 			</p>
 		</footer>

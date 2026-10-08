@@ -1,92 +1,93 @@
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-html {
-	background-color: rgb(25, 25, 25);
-	min-height: 100%;
-	position: relative;
-}
-
 body {
-	font-family: arial, helvetica, clean, sans-serif;
-	font-size: 14px;
-	line-height: 1;
-	margin: 0 0 166px;
+	background-color: rgb(20, 18, 24);
+	color: rgb(200, 200, 200);
+	font-family: arial, helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 1.6;
+	padding: 32px 16px;
+	text-align: center;
 }
 
 a {
-	outline-style: none;
+	color: rgb(255, 210, 63);
 	text-decoration: none;
 }
 
-h1, h2, h3 {
-	font-size: 100%;
-	font-weight: normal;
+a:hover,
+a:focus-visible {
+	text-decoration: underline;
 }
 
-img {
-	border: 0 none;
-}
-
-li {
-	list-style: none;
-}
-
-#header {
-	background-color: rgb(50, 50, 50);
-	height: 82px;
-}
-
-#title, #help, #body, #disclaimer, #copyright {
+.cabinet {
+	background-color: rgb(35, 32, 40);
+	border: 4px solid rgb(214, 45, 32);
+	border-radius: 16px 16px 6px 6px;
 	margin: 0 auto;
-	width: 800px;
+	max-width: 880px;
+	padding: 24px 20px 20px;
 }
 
-#title {
-	color: rgb(255, 255, 255);
-	font-size: 200%;
-	font-weight: bold;
-	padding: 15px 80px 0;
+.title {
+	color: rgb(255, 210, 63);
+	font-family: 'Press Start 2P', monospace;
+	font-size: clamp(20px, 5vw, 36px);
+	font-weight: normal;
+	line-height: 1.2;
+	margin-bottom: 24px;
+	text-shadow: 3px 3px 0 rgb(214, 45, 32);
+	text-transform: uppercase;
 }
 
-#help {
-	color: rgb(200, 200, 200);
-	padding: 10px 80px 15px;
-}
-
-#body {
-	padding: 20px 80px;
+.screen {
+	background-color: black;
+	border-radius: 10px;
+	display: block;
+	padding: 16px;
 }
 
 #arena {
 	display: block;
-}
-
-#footer {
-	background-color: rgb(50, 50, 50);
-	bottom: 0;
-	height: 166px;
-	position: absolute;
+	height: auto;
 	width: 100%;
 }
 
-#disclaimer {
+.controls {
+	color: white;
+	font-weight: bold;
+	margin-top: 12px;
+}
+
+.controls + .controls {
 	color: rgb(200, 200, 200);
-	line-height: 2.0;
-	padding: 5px 80px 0;
+	font-weight: normal;
+	margin-top: 2px;
 }
 
-#disclaimer a {
-	color: rgb(150, 150, 150);
+.footer {
+	margin: 32px auto 0;
+	max-width: 720px;
 }
 
-#copyright {
-	color: rgb(200, 200, 200);
-	padding: 10px 80px 15px;
+.footer p + p {
+	margin-top: 10px;
 }
 
-#copyright a {
-	color: rgb(150, 150, 150);
+@media (max-width: 600px) {
+	body {
+		padding: 16px;
+	}
+
+	.cabinet {
+		padding: 16px 12px 12px;
+	}
+
+	.screen {
+		padding: 8px;
+	}
 }
