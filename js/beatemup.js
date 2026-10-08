@@ -37,14 +37,14 @@ config.energy = {
 
 config.images = [];
 config.images['arena'] = {
-	fileName: 'assets/arena.gif',
+	fileName: 'assets/images/arena.gif',
 	width: config.arena.width,
 	height: config.arena.height,
 	x: config.arena.x,
 	y: config.arena.y
 };
 config.images['user'] = {
-	fileName: 'assets/scorpion.gif',
+	fileName: 'assets/characters/scorpion/sprites.gif',
 	width: config.fighter.width,
 	height: config.fighter.height,
 	x: config.fighter.x,
@@ -108,7 +108,7 @@ config.images['user'].frames.lose = [
 	{x: 5 * config.fighter.width, y: 7 * config.fighter.height}
 ];
 config.images['computer'] = {
-	fileName: 'assets/sub-zero.gif',
+	fileName: 'assets/characters/sub-zero/sprites.gif',
 	width: config.fighter.width,
 	height: config.fighter.height,
 	x: config.arena.width - config.fighter.width - config.fighter.x,
@@ -181,63 +181,63 @@ config.images['computer'].frames.lose = [
 	{x: 6 * config.fighter.width, y: 7 * config.fighter.height}
 ];
 config.images['userEnergyBar'] = {
-	fileName: 'assets/energy-bar.gif',
+	fileName: 'assets/images/energy-bar.gif',
 	width: 324,
 	height: 24,
 	x: 40,
 	y: 60
 };
 config.images['computerEnergyBar'] = {
-	fileName: 'assets/energy-bar.gif',
+	fileName: 'assets/images/energy-bar.gif',
 	width: config.images['userEnergyBar'].width,
 	height: config.images['userEnergyBar'].height,
 	x: config.arena.width - config.images['userEnergyBar'].width - config.images['userEnergyBar'].x,
 	y: config.images['userEnergyBar'].y
 };
 config.images['userEnergy'] = {
-	fileName: 'assets/energy.gif',
+	fileName: 'assets/images/energy.gif',
 	width: config.energy.width,
 	height: config.energy.height,
 	x: config.energy.x,
 	y: config.energy.y
 };
 config.images['computerEnergy'] = {
-	fileName: 'assets/energy.gif',
+	fileName: 'assets/images/energy.gif',
 	width: config.energy.width,
 	height: config.energy.height,
 	x: config.arena.width - config.energy.width - config.energy.x,
 	y: config.energy.y
 };
 config.images['userName'] = {
-	fileName: 'assets/scorpion-name.gif',
+	fileName: 'assets/characters/scorpion/name.gif',
 	width: 125,
 	height: 19,
 	x: 66,
 	y: 62
 };
 config.images['computerName'] = {
-	fileName: 'assets/sub-zero-name.gif',
+	fileName: 'assets/characters/sub-zero/name.gif',
 	width: config.images['userName'].width,
 	height: config.images['userName'].height,
 	x: config.arena.width - config.images['userName'].width - config.images['userName'].x,
 	y: config.images['userName'].y
 };
 config.images['userWins'] = {
-	fileName: 'assets/scorpion-wins.gif',
+	fileName: 'assets/characters/scorpion/wins.gif',
 	width: 300,
 	height: 36,
 	x: 250,
 	y: 112
 };
 config.images['computerWins'] = {
-	fileName: 'assets/sub-zero-wins.gif',
+	fileName: 'assets/characters/sub-zero/wins.gif',
 	width: config.images['userWins'].width,
 	height: config.images['userWins'].height,
 	x: config.images['userWins'].x,
 	y: config.images['userWins'].y
 };
 config.images['fight'] = {
-	fileName: 'assets/fight.gif',
+	fileName: 'assets/images/fight.gif',
 	width: 302,
 	height: 80,
 	x: 249,
@@ -245,13 +245,13 @@ config.images['fight'] = {
 };
 
 config.sounds = [];
-config.sounds['fight'] = {fileName: 'assets/fight.mp3'};
-config.sounds['userWins'] = {fileName: 'assets/scorpion-wins.mp3'};
-config.sounds['computerWins'] = {fileName: 'assets/sub-zero-wins.mp3'};
-config.sounds['moan1'] = {fileName: 'assets/moan1.mp3'};
-config.sounds['moan2'] = {fileName: 'assets/moan2.mp3'};
-config.sounds['getPunched'] = {fileName: 'assets/getPunched.mp3'};
-config.sounds['getKicked'] = {fileName: 'assets/getKicked.mp3'};
+config.sounds['fight'] = {fileName: 'assets/sounds/fight.mp3'};
+config.sounds['userWins'] = {fileName: 'assets/characters/scorpion/wins.mp3'};
+config.sounds['computerWins'] = {fileName: 'assets/characters/sub-zero/wins.mp3'};
+config.sounds['moan1'] = {fileName: 'assets/sounds/moan-1.mp3'};
+config.sounds['moan2'] = {fileName: 'assets/sounds/moan-2.mp3'};
+config.sounds['getPunched'] = {fileName: 'assets/sounds/punch.mp3'};
+config.sounds['getKicked'] = {fileName: 'assets/sounds/kick.mp3'};
 
 var game, images, sounds;
 
