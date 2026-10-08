@@ -102,17 +102,11 @@ export class Game {
 		this.drawFighter(this.player);
 		this.hud.draw(renderer, this.player, this.computer);
 
-		if (this.stage === 'title') {
-			renderer.drawText('Press any key to fight', 130);
-		}
 		if (this.stage === 'fight' && this.stageTicks < msToTicks(config.timing.fightBanner)) {
 			renderer.drawCentered(assets.image(images.fight), config.hud.fightBannerY);
 		}
 		if (this.stage === 'over' && this.stageTicks >= msToTicks(config.timing.victoryDelay)) {
 			renderer.drawCentered(assets.image(this.winner.character.images.wins), config.hud.winsBannerY);
-		}
-		if (this.canRematch) {
-			renderer.drawText('Press any key for a rematch', 180);
 		}
 	}
 

@@ -11,7 +11,7 @@ Demo: [simonsablowski.github.io/beatemup](https://simonsablowski.github.io/beate
 
 ## Controls
 
-Press any key to start. Use the arrow keys to move, the space bar to punch and enter to kick.
+Press any key to start a fight. Use the arrow keys to move, the space bar to punch and enter to kick.
 
 ## Development
 
