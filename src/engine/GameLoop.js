@@ -21,7 +21,7 @@ export class GameLoop {
 			this.update();
 			this.lag -= this.step;
 		}
-		this.render();
+		this.render(now);
 		requestAnimationFrame(this.frame);
 	};
 }

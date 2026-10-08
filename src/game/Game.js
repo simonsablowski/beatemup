@@ -3,6 +3,7 @@ import {config, msToTicks} from '../config.js';
 import {resolveHits} from '../fighters/combat.js';
 import {Fighter} from '../fighters/Fighter.js';
 import {ComputerInput} from '../input/ComputerInput.js';
+import {fightBanner, fightBannerFrame} from './fightBanner.js';
 import {Hud} from './Hud.js';
 
 // The game moves through these stages:
@@ -59,6 +60,8 @@ export class Game {
 		this.computer.reset();
 		this.computerInput.reset();
 		this.winner = null;
+		// Set on the first frame drawn after the fight starts.
+		this.fightStartedAt = null;
 		this.assets.playSound(sounds.fight);
 		this.setStage('fight');
 	}
@@ -95,19 +98,33 @@ export class Game {
 			this.stageTicks >= msToTicks(config.timing.victoryDelay + config.timing.rematchDelay);
 	}
 
-	render() {
+	// now is the time in milliseconds, used for animations that run faster
+	// than the game's update rate.
+	render(now = 0) {
 		const {renderer, assets} = this;
 		renderer.drawImage(assets.image(images.arena), 0, 0);
 		this.drawFighter(this.computer);
 		this.drawFighter(this.player);
 		this.hud.draw(renderer, this.player, this.computer);
 
-		if (this.stage === 'fight' && this.stageTicks < msToTicks(config.timing.fightBanner)) {
-			renderer.drawCentered(assets.image(images.fight), config.hud.fightBannerY);
+		if (this.stage === 'fight') {
+			this.fightStartedAt ??= now;
+			this.drawFightBanner(now - this.fightStartedAt);
 		}
 		if (this.stage === 'over' && this.stageTicks >= msToTicks(config.timing.victoryDelay)) {
 			renderer.drawCentered(assets.image(this.winner.character.images.wins), config.hud.winsBannerY);
 		}
+	}
+
+	drawFightBanner(elapsed) {
+		const frame = fightBannerFrame(elapsed, config.timing.fightBanner);
+		if (frame === null) {
+			return;
+		}
+		const image = this.assets.image(images.fight);
+		const width = image.width / fightBanner.frameCount;
+		const x = Math.round((config.arena.width - width) / 2);
+		this.renderer.drawImagePart(image, frame * width, 0, width, image.height, x, config.hud.fightBannerY);
 	}
 
 	drawFighter(fighter) {

@@ -1,23 +1,27 @@
 import {beforeEach, describe, expect, it, vi} from 'vitest';
-import {sounds} from '../src/assets.js';
+import {images, sounds} from '../src/assets.js';
 import {characters} from '../src/characters/index.js';
 import {config, msToTicks} from '../src/config.js';
+import {fightBanner} from '../src/game/fightBanner.js';
 import {Game} from '../src/game/Game.js';
 import {NO_INPUT} from '../src/input/intent.js';
 
 function createGame() {
 	const assets = {
-		image: () => ({width: 100, height: 20}),
+		image: (path) => ({path, width: 100, height: 20}),
 		playSound: vi.fn()
 	};
-	const renderer = new Proxy({}, {get: () => () => {}});
+	const drawn = [];
+	const renderer = new Proxy({}, {
+		get: (target, name) => name === 'drawImagePart' ? (...args) => drawn.push(args) : () => {}
+	});
 	const input = {next: NO_INPUT, read() {
 		const intent = this.next;
 		this.next = NO_INPUT;
 		return intent;
 	}};
 	const game = new Game({assets, renderer, input, player: characters.scorpion, computer: characters.subZero});
-	return {game, assets, input};
+	return {game, assets, input, drawn};
 }
 
 function tick(game, count = 1) {
@@ -28,10 +32,10 @@ function tick(game, count = 1) {
 }
 
 describe('Game', () => {
-	let game, assets, input;
+	let game, assets, input, drawn;
 
 	beforeEach(() => {
-		({game, assets, input} = createGame());
+		({game, assets, input, drawn} = createGame());
 	});
 
 	it('waits on the title screen for a key press', () => {
@@ -68,5 +72,27 @@ describe('Game', () => {
 		expect(game.stage).toBe('fight');
 		expect(game.computer.energy).toBe(config.fighter.maxEnergy);
 		expect(game.player.state).toBe('idle');
+	});
+
+	it('plays the fight banner once from the start of each fight', () => {
+		const frameWidth = 100 / fightBanner.frameCount;
+		const bannerFrameAt = (now) => {
+			drawn.length = 0;
+			game.render(now);
+			const call = drawn.find(([image]) => image.path === images.fight);
+			return call ? call[1] / frameWidth : null;
+		};
+
+		expect(bannerFrameAt(1000)).toBeNull();
+
+		input.next = {...NO_INPUT, any: true};
+		game.update();
+		expect(bannerFrameAt(5000)).toBe(0);
+		expect(bannerFrameAt(5000 + 4 * fightBanner.frameDuration)).toBe(4);
+		expect(bannerFrameAt(5000 + config.timing.fightBanner / 2)).toBe(4);
+		expect(bannerFrameAt(5000 + config.timing.fightBanner)).toBeNull();
+
+		game.startFight();
+		expect(bannerFrameAt(9000)).toBe(0);
 	});
 });

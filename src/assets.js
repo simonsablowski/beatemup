@@ -3,7 +3,7 @@ export const images = {
 	arena: 'assets/images/arena.gif',
 	energyBar: 'assets/images/energy-bar.gif',
 	energy: 'assets/images/energy.gif',
-	fight: 'assets/images/fight.gif'
+	fight: 'assets/images/fight.png'
 };
 
 export const sounds = {
